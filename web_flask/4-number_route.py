@@ -1,4 +1,4 @@
-5-number_template.py#!/usr/bin/python3
+#!/usr/bin/python3
 '''A simple Flask web application.
 '''
 from flask import Flask
@@ -32,6 +32,12 @@ def c_page(text):
 def python_page(text="is_cool"):
     '''The python page.'''
     return 'Python {}'.format(text.replace('_', ' '))
+
+
+@app.route('/number/<int:n>')
+def number_page(n):
+    '''The number page.'''
+    return '{} is a number'.format(n)
 
 
 if __name__ == '__main__':
